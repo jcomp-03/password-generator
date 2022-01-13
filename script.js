@@ -34,14 +34,18 @@
 
 // Assignment code here
 // Global variables for now
+
 var numArray = [];
 var numMin = 8;
 var numMax = 12;
+var finalLength = numMin; //
+var specialChar = " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~"; // need to use escape character \
+const specialCharArray = specialChar.split(""); // this array may or may not be selected depending on user input
 
-// Get references to the #generate element
+Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -54,22 +58,25 @@ function writePassword() {
 // run the function writePassword(). Simple enough!
 generateBtn.addEventListener("click", writePassword);
 
-
 // code for function generatePassword() here
 function generatePassword() {
-  // Prompt the user the desired length of the password.
-  // Validate the user input of length. Must be integer between 8 and 128.
-  // Do not progress to next prompt until input is validated.
-  // Use the validated user input as a constraint variable on the randomly generated password later.
+  var inputLength = "";
+  var inputChar = "";
 
-  var inputLength = window.prompt("Welcome to my JavaScript-powered password generator. " +
+  // Prompt user the desired length of the password. Validate input. Do not progress until input validated.
+  // Use the validated input as a constraint variable on the randomly generated password later.
+
+  inputLength = window.prompt("Welcome to my JavaScript-powered password generator. " +
     "First, please define how many characters (i.e. the length) you wish your password to have. " +
     `The allowable range is ${numMin} to ${numMax} characters, inclusively. Input your choice as a whole integer.`
   );
+
   // capture the return value of running function validateInputLength
   var validatedLength = validateInputLength(inputLength);
+  
   if (validatedLength) {
-    window.alert("You've made it to the if statement in generatePassword");
+    // run validateInputChar to prompt user set of characters they wish to include in their random password
+    validateInputChar();
   }
 
   // Prompt the user the desired set of allowable characters. One char set minimum is required. Validate the user input.
@@ -87,6 +94,7 @@ function validateInputLength(length) {
     numArray[i] = numMin + i;
     // compare length to each item in the numArray for equality
     if (length == numArray[i]) {
+      finalLength = numArray[i]; // change the value of finalLength
       window.alert("Thank you inputting a correct length as an integer.");
       return true;
     }
@@ -97,4 +105,24 @@ function validateInputLength(length) {
   generatePassword();
 }
 
-// writePassword();
+function validateInputChar(char) {
+  inputChar = window.prompt(`Great. Now what set of characters do you wish to include in your password?
+    Your options are:
+    1. Uppercase characters. i.e. A, B, C,...
+    2. Lowercase characters. i.e. a, b, c,...
+    3. Number characters. i.e. 0, 1, 2,...
+    4. Special characters. i.e.  !\"#$%&'()*+,-./:;<=>?@[]^_\`{|}~)
+    You must select at least one option. For instance, 134 or 14.`);
+  
+  // parse inputChar to use in switch case below
+  inputChar = parseInt(inputChar);
+
+ switch (inputChar) {
+   case value:
+     
+     break;
+ 
+   default:
+     break;
+ }
+}
