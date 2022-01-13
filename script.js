@@ -45,11 +45,11 @@ var lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
 var numberChar = "0123456789";
 var specialChar = " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~"; // need to use escape character \
 
-// These arrays may or may not be selected for inclusion
-const uppercaseCharArray = uppercaseChar.split("");
-const lowercaseCharArray = lowercaseChar.split("");
-const numberCharArray = numberChar.split("");
-const specialCharArray = specialChar.split(""); 
+// split strings above into arrays
+var uppercaseCharArray = uppercaseChar.split('');
+var lowercaseCharArray = lowercaseChar.split('');
+var numberCharArray = numberChar.split('');
+var specialCharArray = specialChar.split(''); 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -83,6 +83,7 @@ function generatePassword() {
     // run validateInputChar to prompt user set of characters they wish to include in their random password
     // this should always run at this stage in the code
     validateInputChar();
+    window.alert("You're past the validateInputChar() in the generatePassword() function.");
   }
   
   // In some manner, use the now defined global array of allowable characters and the length to generate the random password.
@@ -99,7 +100,6 @@ function validateInputLength(length) {
     if (length == numArray[i]) {
       finalLength = parseInt(length); // change the value of global var finalLength
       console.log(`Value of index ${i} is equal to ${numArray[i]}`);
-      // window.alert("Thank you for inputting a correct length as an integer.");
     }
   }
   if (finalLength != undefined) {
@@ -113,6 +113,8 @@ function validateInputLength(length) {
 }
 
 function validateInputChar() {
+  debugger;
+
   inputChar = window.prompt(`Now what set of characters do you wish to include in your password?
   Your options are:
   1. Uppercase characters. i.e. A, B, C,...
@@ -125,12 +127,55 @@ function validateInputChar() {
   inputChar = parseInt(inputChar);
 
  switch (inputChar) {
+    case 34:
+    case 43:
+      finalCharArray = numberCharArray.concat(specialCharArray);
+      console.log();
+      break;
+    case 23:
+    case 32:
+      finalCharArray = lowercaseCharArray.concat(numberCharArray);
+      console.log(finalCharArray);
+      break;
+    case 14:
+    case 41:
+      finalCharArray = uppercaseCharArray.concat(specialCharArray);
+      console.log(finalCharArray);
+      break;
+    case 13:
+    case 31:
+      finalCharArray = uppercaseCharArray.concat(numberCharArray);
+      console.log(finalCharArray);
+      break;
+    case 12:
+    case 21:
+      finalCharArray = uppercaseCharArray.concat(lowercaseCharArray);
+      console.log(finalCharArray);
+      break;
    case 1:
-     
-     break;
- 
+      finalCharArray = uppercaseChar;
+      console.log(finalCharArray);
+      break;
+   case 2:
+      finalCharArray = lowercaseCharArray;
+      console.log(finalCharArray);
+      break;
+   case 3:
+      finalCharArray = numberCharArray;
+      console.log(finalCharArray);
+      break;
+   case 4:
+      finalCharArray = specialCharArray;
+      console.log(finalCharArray);
+
    default:
     window.alert("It appears you did not enter a valid response. Please try again.");
-    validateInputChar(); // call this same function again to give user another try
+    var ans = window.confirm("Do you wish to continue with this password generator?");
+    if (ans) {
+      validateInputChar(); // call this same function again to give user another try 
+    } else {
+      break;
+    }
  }
+
 }
