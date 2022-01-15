@@ -2,10 +2,10 @@
 // Global variables for now
 var numArray = []; // Empty array which will populate based on user input
 var numMin = 8;
-var numMax = 12;
-var finalLength; // Leaving as undefined. Will test for value change in function validateInputLength()
-var finalCharArray = []; // This array will populate based on outcome of function validateInputChar()
-var quit = false;
+var numMax = 128;
+var finalLength; // Leaving as undefined. Will test for value change in validateInputLength()
+var finalCharArray = []; // This array will populate based on outcome of validateInputChar()
+var finalPassword = []; // This array will populate as makeRandomPassword() runs
 
 var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
@@ -48,7 +48,7 @@ function generatePassword() {
   `The allowable range is ${numMin} to ${numMax} characters, inclusively. Input your choice as a whole integer.`
   );
   
-  // If null, break out of generatePassword() and run quitNow()
+  // If null, have generatePassword() stop execution immediately & return false to writePassword()
   if (inputLength == null) {
     return false;
   }
@@ -60,22 +60,16 @@ function generatePassword() {
   if (validatedLength) {
     // Run validateInputChar(). Capture return in var validatedChar
     var validatedChar = validateInputChar();
-    
+
     if (validatedChar) {
-      //continue
-      window.alert("validatedChar returned true.");
+      // Run makeRandomPassword() and return its return to generatePassword()
+      return makeRandomPassword(finalLength, finalCharArray);
     } else {
-      // run quitNow()
-      quitNow();
+      // have generatePassword() return false to writePassword()
+      return false;
     }
-
   }
-
-  // In some manner, use the now defined global array of allowable characters and the length to generate the random password.
-  // This will look like some for loop that loops through the character array randomly selecting a character and assigning
-  // it to the password string. The for loop continues until index counter equals the desired length (plus one) 
 }
-
 
 function validateInputLength(length) {
   if (!length) {
@@ -106,7 +100,6 @@ function validateInputLength(length) {
   }
 }
 
-
 function validateInputChar() {
   inputChar = window.prompt(`Now what set of characters do you wish to include in your password?
   Your options are:
@@ -119,11 +112,9 @@ function validateInputChar() {
   // parse inputChar to use in switch case below
   inputChar = parseInt(inputChar);
   
-  // debugger;
   switch (inputChar) {
     case 1234:
       finalCharArray = uppercaseCharArray.concat(lowercaseCharArray, numberCharArray, specialCharArray);
-      console.dir(finalCharArray);
       return true;
     case 234:
       finalCharArray = lowercaseCharArray.concat(numberCharArray, specialCharArray);
@@ -179,8 +170,28 @@ function validateInputChar() {
   return false;
 }
 
-
-
 function quitNow() {
   window.alert("Thank you for coming out. Please come back soon!");
+}
+
+function randomNumber(min, max) {
+  var value = Math.floor(Math.random() * (max - min + 1) + min);
+  return value;
+};
+
+function makeOneContinuousString(array) {
+  return array.join('')
+}
+
+function makeRandomPassword(length, charArray) {
+
+  var randomIndexPosition; // leave it undefined
+  // iterate up to the value of finalLength
+  for (let i = 0; i < (length); i++) {
+      randomIndexPosition = randomNumber(0, charArray.length);
+      // populate finalPassword[i] with a randomly selected character from finalCharArray[]
+      finalPassword[i] = charArray[randomIndexPosition];
+  }
+  // return the result after running makeOneContinuousString()
+  return makeOneContinuousString(finalPassword);
 }
