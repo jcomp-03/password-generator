@@ -25,7 +25,7 @@ Some points I'd like to highlight in this challenge are:
 ### Introduction to Event Listeners
 When the user runs the index.html file, they are presented with screen that has a red button which they can press to generate the random password.
 
-![HTML screen capture](/assets/images/HTML-screen-capture.jpg)
+![HTML screen capture](/assets/images/HTML-screen-capture.JPG)
 
 
 ### Utilization of JavaScript Standard Built-In Object Math
@@ -36,4 +36,4 @@ My function *randomNumber(min, max)* takes two input arguments and then uses the
 This lesson was good in that it challenged you to create your own custom functions and give you practice in how to break down a task into smaller chunks enclosed within a function. I initially estimated having to create about 3 custom functions to get everything done, but I ended up with about 6 in total, some functions comprising much less code and serving very specific, erh, *functions*.
 
 #### Screenshot of the functions in my .js file
-![List of functions used in developing JavaScript app](/assets/images/functions-used-in-code.jpg)
+![List of functions used in developing JavaScript app](/assets/images/functions-used-in-code.JPG)
