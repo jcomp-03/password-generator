@@ -23,10 +23,12 @@ When you run this code, you can see the full set of criteria is met. I enjoyed t
 Some points I'd like to highlight in this challenge are:
 
 ### Introduction to Event Listeners
-When the user runs the index.html file, they are presented with screen that has a red button which they can press to generate the random password.
+When the user runs the index.html file, they are presented with a screen that has a red button which they can press to generate the random password. They are then led through a series of prompts which ultimately determine the the length and allowed set of characters in their random password. See the photos below for reference. The random password is displayed in the dashed box in the second photo.
 
-![HTML screen capture](/assets/images/HTML-screen-capture.JPG)
-
+#### Screen upon page loading
+![Screen on loading](/assets/images/HTML-screen-capture.JPG)
+#### Screen after generating random password
+![Screen after pressing red button and generating password](/assets/images/HTML-output-password.JPG)
 
 ### Utilization of JavaScript Standard Built-In Object Math
 I was introduced to the standard built-in JavaScript object Math in the lesson module, and had to apply its usage to this week's challenge.
