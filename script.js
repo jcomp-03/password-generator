@@ -1,11 +1,10 @@
 // Assignment code here
-// Global variables for now
-var numArray = []; // Empty array which will populate based on user input
+// Global variables
 var numMin = 8;
 var numMax = 128;
-var finalLength; // Leaving as undefined. Will test for value change in validateInputLength()
-var finalCharArray = []; // This array will populate based on outcome of validateInputChar()
-var finalPassword = []; // This array will populate as makeRandomPassword() runs
+var finalLength; // Leave as undefined and test for change in value in validateInputLength()
+var finalCharArray = []; // Array populates based on outcome of validateInputChar()
+var finalPassword = []; // Array populates based on outcome of makeRandomPassword()
 
 var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
@@ -26,11 +25,10 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  // assign whatever password value is created by function generatePassword() 
-  // to the value of the HTML element textarea
+  // if generatePassword() returns true, then alter HTML element's value to show random password
   if(password) {
   passwordText.value = password;
-  } else {
+  } else { // if generatePassword() returns false, run quitNow()
     quitNow();
   }
 }
@@ -48,7 +46,7 @@ function generatePassword() {
   `The allowable range is ${numMin} to ${numMax} characters, inclusively. Input your choice as a whole integer.`
   );
   
-  // If null, have generatePassword() stop execution immediately & return false to writePassword()
+  // If null, stop execution immediately & return false to writePassword()
   if (inputLength == null) {
     return false;
   }
@@ -80,6 +78,9 @@ function validateInputLength(length) {
       return false;
     }
   }
+
+  // Empty array which will populate based on user input
+  var numArray = [];
 
   // populate numArray with numbers given global min-max bounds
   for (let i = 0; i < (numMax-numMin + 1); i++) {
