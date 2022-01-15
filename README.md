@@ -23,7 +23,7 @@ When you run this code, you can see the full set of criteria is met. I enjoyed t
 Some points I'd like to highlight in this challenge are:
 
 ### Introduction to Event Listeners
-When the user runs the index.html file, they are presented with a screen that has a red button which they can press to generate the random password. They are then led through a series of prompts which ultimately determine the the length and allowed set of characters in their random password. See the photos below for reference. The random password is displayed in the dashed box in the second photo.
+When the user runs the index.html file, they are presented with a screen that has a red button which they can press to generate the random password. They are then led through a series of prompts which ultimately determine the the length and allowed set of characters in their random password. See the photos below for reference. The random password is displayed in the dashed box in the second photo. In the JavaScript file, I create a variable which referes to that HTML element with id attribute of #generate. I append to that variable the method *.AddEventListener("click", writePassword())* which listens for the event of "click" (i.e. when the button is clicked); when the button is clicked, the function *writePassword()* runs, allowing for the remainder of the JavaScript to run.
 
 #### Screen upon page loading
 ![Screen on loading](/assets/images/HTML-screen-capture.JPG)
