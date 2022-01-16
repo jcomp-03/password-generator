@@ -39,7 +39,8 @@ generateBtn.addEventListener("click", writePassword);
 
 // code for function generatePassword() here
 function generatePassword() {
-  
+  debugger;
+
   // Prompt user the desired length of the password.
   var inputLength = window.prompt("Welcome to my JavaScript-powered password generator. " +
   "First, please define how many characters (i.e. the length) you wish your password to have. " +
@@ -73,7 +74,7 @@ function validateInputLength(length) {
   if (!length) {
     var answ = window.confirm("You entered nothing. Do you wish to continue? Select cancel to quit.");
     if (answ) {
-      generatePassword();
+      return generatePassword();
     } else {
       return false;
     }
