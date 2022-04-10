@@ -1,4 +1,4 @@
-# Week 3 Challenge Assignment - Password Generator (Focus: JavaScript)
+# Password Generator (Focus: JavaScript)
 ###### GitHub Pages Deployment: https://jcomp-03.github.io/password-generator/
 
 The purpose of this week's challenge is to code a random password generator.
