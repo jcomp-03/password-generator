@@ -1,25 +1,9 @@
 # Week 3 Challenge Assignment - Password Generator (Focus: JavaScript)
 ###### GitHub Pages Deployment: https://jcomp-03.github.io/password-generator/
 
-The purpose of this week's challenge is to code a random password generator given a set of criteria. The criteria were:
+The purpose of this week's challenge is to code a random password generator.
 
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-
-When you run this code, you can see the full set of criteria is met. I enjoyed this challenge because it is my first real application of my knowledge of JavaScript, creating custom functions and using existing functions, as well a test of how well my pseudocode reflects the final code. Overall, my pseudocode helped me formulate the large picture of what needed to be done and how to go about doing it. My take-away in this challenge is pseudocode should not be pushed aside for the novice coder. **Use pseudocode!!**
+I enjoyed this challenge because it is my first real application of my knowledge of JavaScript, creating custom functions and using existing functions, as well a test of how well my pseudocode reflects the final code. Overall, my pseudocode helped me formulate the large picture of what needed to be done and how to go about doing it. My take-away in this challenge is pseudocode should not be pushed aside for the novice coder. **Use pseudocode!!**
 
 Some points I'd like to highlight in this challenge are:
 
