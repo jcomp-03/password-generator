@@ -1,14 +1,17 @@
 # Password Generator (Focus: JavaScript)
 ###### GitHub Pages Deployment: https://jcomp-03.github.io/password-generator/
 
-The purpose of this week's challenge is to code a random password generator.
+A random password generator.
+  - Create variables containing different data types used to create a password
+  - Write conditional statements to add in password criteria that the user has selected
+  - Write for loops to create a password from the variables you created
+  - Use functions to display the password to the user
 
-I enjoyed this challenge because it is my first real application of my knowledge of JavaScript, creating custom functions and using existing functions, as well a test of how well my pseudocode reflects the final code. Overall, my pseudocode helped me formulate the large picture of what needed to be done and how to go about doing it. My take-away in this challenge is pseudocode should not be pushed aside for the novice coder. **Use pseudocode!!**
 
 Some points I'd like to highlight in this challenge are:
 
 ### Introduction to Event Listeners
-When the user runs the index.html file, they are presented with a screen that has a red button which they can press to generate the random password. They are then led through a series of prompts which ultimately determine the the length and allowed set of characters in their random password. See the photos below for reference. The random password is displayed in the dashed box in the second photo. In the JavaScript file, I create a variable which referes to that HTML element with id attribute of #generate. I append to that variable the method *.AddEventListener("click", writePassword())* which listens for the event of "click" (i.e. when the button is clicked); when the button is clicked, the function *writePassword()* runs, allowing for the remainder of the JavaScript to run.
+When the user runs the index.html file, they are presented with a screen that has a red button which they can press to generate the random password. They are then led through a series of prompts which ultimately determines the the length and allowed set of characters in their random password. See the photos below for reference. The random password is displayed in the dashed box in the second photo. In the JavaScript file, I create a variable which referes to that HTML element with id attribute of #generate. I append to that variable the method *.AddEventListener("click", writePassword())* which listens for the event of "click" (i.e. when the button is clicked); when the button is clicked, the function *writePassword()* runs, allowing for the remainder of the JavaScript to run.
 
 #### Screen upon page loading
 ![Screen on loading](/assets/images/HTML-screen-capture.JPG)
